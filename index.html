@@ -371,28 +371,14 @@
 
       
         
-          
-            <p>趁着昨天晚上的时间简单的学习了一下字符串的格式化输出，正好解决了在编写昨天的猜数字游戏中变量与字符串不能一块输出的问题，其实昨天为了输出猜数字的剩余的机会，我把int类型强制转换为字符串型，然后通过拼接输出，这也是一种解决的办法，只不过是比较麻烦而已，今天简单的说一下字符串的格式化，以后再有这方面的知识，会及时补充。</p>
-<ol>
-<li><p>字符串的输出<br>字符串的输出最简单，直接用双引号或者单引号将要输出的字符串包起来，直接print就可以。</p>
-<p><img src="http://img.blog.csdn.net/20170110111907645?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>但是要注意的是如果你要输出的字符串中本身就包含单引号，那你就用双引号将其包围起来，而不能再用单引号。反之亦然。</p>
-<p><img src="http://img.blog.csdn.net/20170110112224247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-</li>
-</ol>
-<p>为了大家输出包含单引号或者双引号的字符串，Python为大家提供了三引号，大家可以在三引号内输入你要输出的字符串，就不用担心上图的问题了。</p>
-<p><img src="http://img.blog.csdn.net/20170110112834314?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p> 2.字符串+变量的输出<br> 这里主要是使用的代替符，常用的代替符号跟C语言的类似，下面说几个常用的。<br> <strong>%d—整数        %s—字符串       %f—浮点数</strong><br> 当然类似于C语言可以进行位数的控制。</p>
-<p> <img src="http://img.blog.csdn.net/20170110113743467?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>整数前面会用空格来补齐位数。</p>
-<p><img src="http://img.blog.csdn.net/20170110114027486?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>3.输出含有多个变量的字符串<br>这里主要时使用元组来为参数赋值，元组在后面会介绍。</p>
-<p><img src="http://img.blog.csdn.net/20170110114249224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>4.换行<br>Python默认是自动换行的，为了让其不换行，在后面加上<strong>end=””</strong>即可。</p>
-<p><img src="http://img.blog.csdn.net/20170110114431539?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110114528619?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>这些字符串格式化的知识在Python的日常中基本已经够用，以后再遇到，会继续进行补充。<br>最后将联系的源代码附上。</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#字符串与字符串可以直接使用+连接符来进行连接</span></div><div class="line">a=<span class="string">"520"</span></div><div class="line">b=<span class="string">"1314"</span></div><div class="line"><span class="keyword">print</span>(a+b);<span class="comment">#变量可以直接输出</span></div><div class="line">number=<span class="number">12</span></div><div class="line"><span class="keyword">print</span>(<span class="string">"一共有%d只鸡"</span>%number)<span class="comment">#这里%d的内容会被%后面的数据所替换，并且%d只能代替整数</span></div><div class="line">numbertostr=str(number)<span class="comment">#这里使用了强制类型转换，将整形转换为字符串型</span></div><div class="line"><span class="keyword">print</span>(<span class="string">"一共有"</span>+numbertostr+<span class="string">"只鸡"</span>)<span class="comment">#使用字符串的拼接进行输出</span></div><div class="line">a=<span class="number">1.0</span></div><div class="line"><span class="keyword">print</span>(<span class="string">"浮点数a的大小为%f"</span>%a)<span class="comment">#用%f来代替一个浮点数，默认保留6位小数</span></div><div class="line"><span class="keyword">print</span>(<span class="string">"保留两位小数的浮点数为%.2f"</span>%a)</div><div class="line">str1=<span class="string">"我是帅哥"</span></div><div class="line"><span class="keyword">print</span>(<span class="string">"他说:%s"</span>%str1)<span class="comment">#%s可以用来代替一个字符串</span></div><div class="line"><span class="comment">#同时填入多个参数的情况,其实时用元组成进行赋值</span></div><div class="line">score=<span class="number">85.7</span></div><div class="line">age=<span class="number">12</span></div><div class="line">name=<span class="string">"Guo"</span></div><div class="line"><span class="keyword">print</span>(<span class="string">"我的名字是:%s,我的年龄是:%d,我的成绩是:%.1f"</span>%(name,age,score))</div><div class="line"><span class="comment">#关于换行的问题</span></div><div class="line">str2=<span class="string">"I love you"</span></div><div class="line"><span class="keyword">for</span> i in str2 :</div><div class="line">     <span class="keyword">print</span>(i)<span class="comment">#默认总时换行输出</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> <span class="keyword">m</span> in str2:</div><div class="line">     <span class="keyword">print</span>(<span class="keyword">m</span>,end=<span class="string">""</span>)<span class="comment">#加上end=""避免了其自动换行输出</span></div></pre></td></tr></table></figure>
-          
+          <p>趁着昨天晚上的时间简单的学习了一下字符串的格式化输出，正好解决了在编写昨天的猜数字游戏中变量与字符串不能一块输出的问题，其实昨天为了输出猜数字的剩余的机会，我把int类型强制转换为字符串型，然后通过拼接输出，这也是一种解决的办法，只不过是比较麻烦而已，今天简单的说一下字符串的格式化，以后再有这方面的知识，会及时补充。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/10/python2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -551,11 +537,14 @@
 
       
         
-          
-            <p>上一个寒假学习完了《Android-第一行代码》这本书，这个寒假打算好学习一下python这门语言，一方面是由于对python的爬虫比较感兴趣，另一方面也是算是搜索查找的一种工具。这次学习由于没有找到一本比较合适的零基础入门的书籍，所以直接看的小甲鱼系列的python视频，感觉效果还是不错的。闲话少说，直奔主题。<br>先总的说一下学习python语言给我的感觉（虽然知识学习了一点），由于之前学习过C、C++、Java等语言，对一些语法结构可以说已经是根深蒂固了，而python却真的是不走寻常路，语法结构根上述语言差的好多，一下手真的觉得好别扭。例如python不用去声明一个变量，想用就直接用。还有就是python没有用{}来界定一个函数或者语句的作用域，而是采用了缩进，同一缩进下表一一个作用域，还有好多，以后会慢慢补充，总而言之，还需要适应一段时间。<br>首先，用一个简单的猜数字的游戏来学习一下python的if语句、while语句等用法。<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#编写一个猜数字的游戏，功能要求实现多次猜数，数字随机产生</span></div><div class="line"><span class="meta">#若给出的数字不是正确的答案，并给出相应的提示。</span></div><div class="line">import random</div><div class="line"><span class="keyword">print</span>(<span class="string">"----------欢迎来玩我的猜数字游戏！！！---------"</span>)</div><div class="line"><span class="keyword">print</span>(<span class="string">"----------你只有3次机会，一定要加油哦---------"</span>)</div><div class="line">secret=random.randint(<span class="number">1</span>,<span class="number">10</span>)</div><div class="line">temp=<span class="keyword">input</span>(<span class="string">"请输入你要猜的数字："</span>)</div><div class="line">guess=<span class="keyword">int</span>(temp)</div><div class="line">flag=<span class="number">3</span></div><div class="line"><span class="keyword">if</span> (guess==secret) <span class="keyword">and</span> (flag==<span class="number">3</span>):</div><div class="line">     <span class="keyword">print</span>(<span class="string">"哥，你真厉害，一次就猜对了"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">     <span class="keyword">while</span> (guess!=secret) <span class="keyword">and</span> (flag!=<span class="number">1</span>):</div><div class="line">          flag=flag<span class="number">-1</span></div><div class="line">          <span class="keyword">if</span> guess&lt;secret:</div><div class="line">               <span class="keyword">print</span>(<span class="string">"你猜的数字小了，小了"</span>)</div><div class="line">          <span class="keyword">if</span> guess&gt;secret :</div><div class="line">               <span class="keyword">print</span>(<span class="string">"你猜的数字大了，大了"</span>)</div><div class="line">          flagtostr=<span class="keyword">str</span>(flag)</div><div class="line">          <span class="keyword">print</span>(<span class="string">"你还有"</span>+flagtostr+<span class="string">"次机会"</span>)</div><div class="line">          temp=<span class="keyword">input</span>(<span class="string">"请重新输入你的数字:"</span>)</div><div class="line">          guess=<span class="keyword">int</span>(temp)</div><div class="line">     <span class="keyword">if</span> secret==guess :</div><div class="line">          <span class="keyword">print</span>(<span class="string">"哥，你终于猜对了！！！"</span>)</div><div class="line">     <span class="keyword">else</span>:</div><div class="line">          <span class="keyword">print</span>(<span class="string">"很抱歉，机会用完了！！！"</span>)</div><div class="line">          secrettostr=<span class="keyword">str</span>(secret)</div><div class="line">          <span class="keyword">print</span>(<span class="string">"正确的答案为"</span>+secrettostr)</div><div class="line"><span class="keyword">print</span>(<span class="string">"谢谢你来玩我的小游戏！！！"</span>)</div></pre></td></tr></table></figure></p>
-<p>程序运行截图：<br><img src="http://img.blog.csdn.net/20170109211354576?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>上面的这个小游戏主要是熟悉一下python的语法结构，了解python通过缩进来控制语句的作用域，还有input、print等内置函数的使用，python的内置函数以后会慢慢补充。<br>最后给大家附上Python  IDE的下载地址：<a href="http://pan.baidu.com/s/1o7ZHVvW" target="_blank" rel="external">Python-3.6.0.exe</a></p>
-
-          
+          <p>上一个寒假学习完了《Android-第一行代码》这本书，这个寒假打算好学习一下python这门语言，一方面是由于对python的爬虫比较感兴趣，另一方面也是算是搜索查找的一种工具。这次学习由于没有找到一本比较合适的零基础入门的书籍，所以直接看的小甲鱼系列的python视频，感觉效果还是不错的。闲话少说，直奔主题。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/09/python/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
