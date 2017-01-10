@@ -84,18 +84,35 @@
 
 
 
-<meta name="description" content="上一个寒假学习完了《Android-第一行代码》这本书，这个寒假打算好学习一下python这门语言，一方面是由于对python的爬虫比较感兴趣，另一方面也是算是搜索查找的一种工具。这次学习由于没有找到一本比较合适的零基础入门的书籍，所以直接看的小甲鱼系列的python视频，感觉效果还是不错的。闲话少说，直奔主题。">
+<meta name="description" content="接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python零基础入门一">
-<meta property="og:url" content="http://Guoxiangyao.github.io/2017/01/09/python/index.html">
+<meta property="og:title" content="Python零基础入门之列表的分片">
+<meta property="og:url" content="http://Guoxiangyao.github.io/2017/01/10/python4/index.html">
 <meta property="og:site_name" content="Running">
-<meta property="og:description" content="上一个寒假学习完了《Android-第一行代码》这本书，这个寒假打算好学习一下python这门语言，一方面是由于对python的爬虫比较感兴趣，另一方面也是算是搜索查找的一种工具。这次学习由于没有找到一本比较合适的零基础入门的书籍，所以直接看的小甲鱼系列的python视频，感觉效果还是不错的。闲话少说，直奔主题。">
-<meta property="og:image" content="http://img.blog.csdn.net/20170109211354576?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-01-10T03:57:48.214Z">
+<meta property="og:description" content="接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110200824693?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110201018975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110201751171?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110201841292?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110202448369?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110202501841?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110204031155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110204102359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110205100915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110205144431?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110205552146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110205612042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110210643051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110210831189?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110211322106?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110211342966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110212324837?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170110212337696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-01-10T13:31:39.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python零基础入门一">
-<meta name="twitter:description" content="上一个寒假学习完了《Android-第一行代码》这本书，这个寒假打算好学习一下python这门语言，一方面是由于对python的爬虫比较感兴趣，另一方面也是算是搜索查找的一种工具。这次学习由于没有找到一本比较合适的零基础入门的书籍，所以直接看的小甲鱼系列的python视频，感觉效果还是不错的。闲话少说，直奔主题。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170109211354576?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Python零基础入门之列表的分片">
+<meta name="twitter:description" content="接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170110200824693?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -123,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/01/09/python/"/>
+  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/01/10/python4/"/>
 
 
 
 
 
-  <title> Python零基础入门一 | Running </title>
+  <title> Python零基础入门之列表的分片 | Running </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +289,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/01/09/python/">
+  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/01/10/python4/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Guoxiangyao">
@@ -296,7 +313,7 @@
             
             
               
-                Python零基础入门一
+                Python零基础入门之列表的分片
               
             
           </h1>
@@ -311,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-09T21:33:54+08:00">
-                2017-01-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T21:26:52+08:00">
+                2017-01-10
               </time>
             
 
@@ -352,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/09/python/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/09/python/" itemprop="commentCount"></span>
+                <a href="/2017/01/10/python4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/10/python4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -363,7 +380,7 @@
 
           
           
-             <span id="/2017/01/09/python/" class="leancloud_visitors" data-flag-title="Python零基础入门一">
+             <span id="/2017/01/10/python4/" class="leancloud_visitors" data-flag-title="Python零基础入门之列表的分片">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,9 +407,35 @@
       
 
       
-        <p>上一个寒假学习完了《Android-第一行代码》这本书，这个寒假打算好学习一下python这门语言，一方面是由于对python的爬虫比较感兴趣，另一方面也是算是搜索查找的一种工具。这次学习由于没有找到一本比较合适的零基础入门的书籍，所以直接看的小甲鱼系列的python视频，感觉效果还是不错的。闲话少说，直奔主题。<br><a id="more"></a><br>先总的说一下学习python语言给我的感觉（虽然知识学习了一点），由于之前学习过C、C++、Java等语言，对一些语法结构可以说已经是根深蒂固了，而python却真的是不走寻常路，语法结构根上述语言差的好多，一下手真的觉得好别扭。例如python不用去声明一个变量，想用就直接用。还有就是python没有用{}来界定一个函数或者语句的作用域，而是采用了缩进，同一缩进下表一一个作用域，还有好多，以后会慢慢补充，总而言之，还需要适应一段时间。<br>首先，用一个简单的猜数字的游戏来学习一下python的if语句、while语句等用法。<br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#编写一个猜数字的游戏，功能要求实现多次猜数，数字随机产生</span></div><div class="line"><span class="meta">#若给出的数字不是正确的答案，并给出相应的提示。</span></div><div class="line">import random</div><div class="line"><span class="keyword">print</span>(<span class="string">"----------欢迎来玩我的猜数字游戏！！！---------"</span>)</div><div class="line"><span class="keyword">print</span>(<span class="string">"----------你只有3次机会，一定要加油哦---------"</span>)</div><div class="line">secret=random.randint(<span class="number">1</span>,<span class="number">10</span>)</div><div class="line">temp=<span class="keyword">input</span>(<span class="string">"请输入你要猜的数字："</span>)</div><div class="line">guess=<span class="keyword">int</span>(temp)</div><div class="line">flag=<span class="number">3</span></div><div class="line"><span class="keyword">if</span> (guess==secret) <span class="keyword">and</span> (flag==<span class="number">3</span>):</div><div class="line">     <span class="keyword">print</span>(<span class="string">"哥，你真厉害，一次就猜对了"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">     <span class="keyword">while</span> (guess!=secret) <span class="keyword">and</span> (flag!=<span class="number">1</span>):</div><div class="line">          flag=flag<span class="number">-1</span></div><div class="line">          <span class="keyword">if</span> guess&lt;secret:</div><div class="line">               <span class="keyword">print</span>(<span class="string">"你猜的数字小了，小了"</span>)</div><div class="line">          <span class="keyword">if</span> guess&gt;secret :</div><div class="line">               <span class="keyword">print</span>(<span class="string">"你猜的数字大了，大了"</span>)</div><div class="line">          flagtostr=<span class="keyword">str</span>(flag)</div><div class="line">          <span class="keyword">print</span>(<span class="string">"你还有"</span>+flagtostr+<span class="string">"次机会"</span>)</div><div class="line">          temp=<span class="keyword">input</span>(<span class="string">"请重新输入你的数字:"</span>)</div><div class="line">          guess=<span class="keyword">int</span>(temp)</div><div class="line">     <span class="keyword">if</span> secret==guess :</div><div class="line">          <span class="keyword">print</span>(<span class="string">"哥，你终于猜对了！！！"</span>)</div><div class="line">     <span class="keyword">else</span>:</div><div class="line">          <span class="keyword">print</span>(<span class="string">"很抱歉，机会用完了！！！"</span>)</div><div class="line">          secrettostr=<span class="keyword">str</span>(secret)</div><div class="line">          <span class="keyword">print</span>(<span class="string">"正确的答案为"</span>+secrettostr)</div><div class="line"><span class="keyword">print</span>(<span class="string">"谢谢你来玩我的小游戏！！！"</span>)</div></pre></td></tr></table></figure></p>
-<p>程序运行截图：<br><img src="http://img.blog.csdn.net/20170109211354576?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>上面的这个小游戏主要是熟悉一下python的语法结构，了解python通过缩进来控制语句的作用域，还有input、print等内置函数的使用，python的内置函数以后会慢慢补充。<br>最后给大家附上Python  IDE的下载地址：<a href="http://pan.baidu.com/s/1o7ZHVvW" target="_blank" rel="external">Python-3.6.0.exe</a></p>
-
+        <p>接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。<br><a id="more"></a><br>1.列表的分片<br> <strong>格式：str1=str[起始位置：结束位置]</strong><br> 作用：将str中指定区间的元素复制到str1中，也就是说分片得到的是原字符串的一个副本，而不是一个指向str的一个标签而已，而通过“=”赋值得到只是str的一个标签，即对str操作就是对str1进行操作，类似于Java中的值传递和引用。</p>
+<p><img src="http://img.blog.csdn.net/20170110200824693?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110201018975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>2.列表的重复操作符（*）</p>
+<p><img src="http://img.blog.csdn.net/20170110201751171?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110201841292?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>3.成员关系操作符（in  not in）<br>作用：判断一个元素是否存在于一个列表之中</p>
+<p><img src="http://img.blog.csdn.net/20170110202448369?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110202501841?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>但是如果判断一个元素是否存在于列表中的列表时，这样单纯的判断时不行的。<br>第一种情况中明明在列表中存在，结果却是False,说明了对于列表中列表的元素不能直接判断。而需要用下图的方法，手动指定一下位置。</p>
+<p><img src="http://img.blog.csdn.net/20170110204031155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110204102359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>4.列表的内置函数<br>(1)count()：计算列表中元素出现的次数<br> <img src="http://img.blog.csdn.net/20170110205100915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
+<p><img src="http://img.blog.csdn.net/20170110205144431?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p> (2)index():返回指定元素在列表中首次出现的位置</p>
+<p> <img src="http://img.blog.csdn.net/20170110205552146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110205612042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>该函数也可以添加参数，即在指定的区间内部进行查找。</p>
+<p>(3)reverse()函数：实现列表元素的反转</p>
+<p> <img src="http://img.blog.csdn.net/20170110210643051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110210831189?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>(4)sort():实现列表的排序,默认是从小到大排序</p>
+<p><img src="http://img.blog.csdn.net/20170110211322106?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110211342966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>当然也可以实现从大到小进行排序（注意reverse=<strong>True</strong>大写）</p>
+<p><img src="http://img.blog.csdn.net/20170110212324837?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170110212337696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>关于列表的相关知识到这里就基本结束了，明天将整理与列表类似的一个数据结构——元组。最后，将今天的代码附上：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"------列表的分片------"</span>)</span></span></div><div class="line">str1=<span class="string">"abcdefg"</span></div><div class="line">str2=str1[<span class="number">0</span>:<span class="number">2</span>]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(str2)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"------重复操作符------"</span>)</span></span></div><div class="line">list=[<span class="string">"小甲鱼"</span>,<span class="string">"小布丁"</span>,<span class="string">"大布丁"</span>]</div><div class="line">list=list*<span class="number">3</span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"------成员关系操作符------"</span>)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"小甲鱼"</span> in list)</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"\n"</span>)</span></span></div><div class="line"></div><div class="line"></div><div class="line">list1=[<span class="string">'123'</span>,<span class="string">"华为"</span>,[<span class="string">"三星"</span>,<span class="string">"小米"</span>]]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"三星"</span> in list1)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"\n"</span>)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"三星"</span> in list1[<span class="number">2</span>])</span></span></div><div class="line"></div><div class="line">list2=[<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>]</div><div class="line">num=list2.count(<span class="string">'1'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"列表中元素1出现的次数为:%d"</span>%num)</span></span></div><div class="line">list3=list2[:]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list3.index(<span class="string">'1'</span>)</span></span>)</div><div class="line"></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list3)</span></span></div><div class="line">list3.reverse()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list3)</span></span></div><div class="line"></div><div class="line">list4=[<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">5</span>]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list4)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"\n"</span>)</span></span></div><div class="line">list4.sort()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list4)</span></span></div><div class="line"></div><div class="line">list4.sort(reverse=True)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list4)</span></span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -440,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/06/hello/" rel="next" title="终于有了自己的博客啦！！！">
-                <i class="fa fa-chevron-left"></i> 终于有了自己的博客啦！！！
+              <a href="/2017/01/10/python3/" rel="next" title="Python零基础入门之For循环+列表">
+                <i class="fa fa-chevron-left"></i> Python零基础入门之For循环+列表
               </a>
             
           </div>
@@ -449,10 +492,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/10/python2/" rel="prev" title="Python零基础入门之字符串的格式化">
-                Python零基础入门之字符串的格式化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -467,10 +506,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/09/python/"
-     data-title="Python零基础入门一"
+        <div class="ds-share flat" data-thread-key="2017/01/10/python4/"
+     data-title="Python零基础入门之列表的分片"
      data-content=""
-     data-url="http://Guoxiangyao.github.io/2017/01/09/python/">
+     data-url="http://Guoxiangyao.github.io/2017/01/10/python4/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -497,8 +536,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/09/python/"
-           data-title="Python零基础入门一" data-url="http://Guoxiangyao.github.io/2017/01/09/python/">
+      <div class="ds-thread" data-thread-key="2017/01/10/python4/"
+           data-title="Python零基础入门之列表的分片" data-url="http://Guoxiangyao.github.io/2017/01/10/python4/">
       </div>
     
   </div>
