@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -84,15 +84,20 @@
 
 
 
-<meta name="description" content="新的一年，心的记录，心的成长。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Running">
-<meta property="og:url" content="http://Guoxiangyao.github.io/tags/生活/index.html">
+<meta name="description" content="这篇博客主要是整理的lambda表达式和两个比较重要的内置函数的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python零基础入门之八lambda的表达式和filter、map内置函数">
+<meta property="og:url" content="http://Guoxiangyao.github.io/2017/01/12/python7/index.html">
 <meta property="og:site_name" content="Running">
-<meta property="og:description" content="新的一年，心的记录，心的成长。">
+<meta property="og:description" content="这篇博客主要是整理的lambda表达式和两个比较重要的内置函数的问题。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170112233100353?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170112233449839?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170112233703924?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-01-12T15:43:16.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Running">
-<meta name="twitter:description" content="新的一年，心的记录，心的成长。">
+<meta name="twitter:title" content="Python零基础入门之八lambda的表达式和filter、map内置函数">
+<meta name="twitter:description" content="这篇博客主要是整理的lambda表达式和两个比较重要的内置函数的问题。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170112233100353?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://Guoxiangyao.github.io/tags/生活/"/>
+  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/01/12/python7/"/>
 
 
 
 
 
-  <title> 标签: 生活 | Running </title>
+  <title> Python零基础入门之八lambda的表达式和filter、map内置函数 | Running </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,46 +264,235 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        生活
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/01/12/python7/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Guoxiangyao">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Running">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Running" src="">
+    </span>
+  </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python零基础入门之八lambda的表达式和filter、map内置函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T23:42:18+08:00">
+                2017-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/12/python7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/12/python7/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/12/python7/" class="leancloud_visitors" data-flag-title="Python零基础入门之八lambda的表达式和filter、map内置函数">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>这篇博客主要是整理的lambda表达式和两个比较重要的内置函数的问题。<br><a id="more"></a><br>1.Lambda表达式<br>Lambda表达式语法是：lambda 参数：对参数进行的运算<br>之所以引进Lambda的表达式主要是由于以下几点：<br>(1)Python写一些执行脚本的时候，使用lanbda就可以省下定义函数的过程.<br>(2)对于一些比较抽象的且整个程序的执行下来只需要调用一两次的函数，不需要为了命名的问题头疼.<br>(3)简化代码的可读性，不需要调到函数的定义部分去阅读.</p>
+<p>注意在使用Lambda表达式时先将Lambda表达式赋值给一个变量，然后向调用函数似的去使用这个变量得到运算的结果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ds</span><span class="params">(x)</span>:</span></div><div class="line">     <span class="keyword">return</span> <span class="number">2</span>*x+<span class="number">1</span></div><div class="line">print(ds(<span class="number">5</span>))</div><div class="line"><span class="comment">#lambda表达式后面紧跟着的是参数，冒号后面</span></div><div class="line"><span class="comment">#紧跟着的是对于参数进行的操作</span></div><div class="line"><span class="keyword">lambda</span> x:<span class="number">2</span>*x+<span class="number">1</span></div><div class="line">g=<span class="keyword">lambda</span> x:<span class="number">2</span>*x+<span class="number">1</span></div><div class="line">print(g(<span class="number">5</span>))</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></div><div class="line">     <span class="keyword">return</span> (x+y)</div><div class="line">print(add(<span class="number">3</span>,<span class="number">4</span>))</div><div class="line"></div><div class="line">g=<span class="keyword">lambda</span> x,y : x+y</div><div class="line">print(g(<span class="number">3</span>,<span class="number">4</span>))</div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20170112233100353?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>2.filter()函数<br>语法：filter(None or Function,iterable)<br>作用是将可迭代的数据中经过条件选出结果为1或者true的数据,结合lambda去使用更加方便.<br>实例代码中的筛选器的作用就是筛选出1~10之间的奇数<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list1=list(<span class="name">filter</span>(<span class="name">lambda</span> x<span class="symbol">:x</span>%<span class="number">2</span>,range(<span class="number">0</span>,<span class="number">10</span>)))</div><div class="line">print(<span class="name">list1</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170112233449839?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>3.map()函数<br>map()函数就是将可迭代的数据按照第一个参数定义的映射逐个进行计算。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list2=list(<span class="name">map</span>(<span class="name">lambda</span> x<span class="symbol">:x*2</span>,range(<span class="number">10</span>)))</div><div class="line">print(<span class="name">list2</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170112233703924?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>关于函数的基础知识到此就结束了，下一篇博客整理关于字典这种数据结构的相关知识。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/01/06/hello/" itemprop="url">
-              
-                <span itemprop="name">终于有了自己的博客啦！！！</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>爷，您看着好，就赏点吧！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.jpg" alt="Guoxiangyao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-06T23:53:16+08:00"
-              content="2017-01-06" >
-          01-06
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/12/python6/" rel="next" title="Python零基础入门之七变量与内置函数">
+                <i class="fa fa-chevron-left"></i> Python零基础入门之七变量与内置函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/01/12/python7/"
+     data-title="Python零基础入门之八lambda的表达式和filter、map内置函数"
+     data-content=""
+     data-url="http://Guoxiangyao.github.io/2017/01/12/python7/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
           
           </div>
@@ -306,6 +500,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/12/python7/"
+           data-title="Python零基础入门之八lambda的表达式和filter、map内置函数" data-url="http://Guoxiangyao.github.io/2017/01/12/python7/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -499,6 +701,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
