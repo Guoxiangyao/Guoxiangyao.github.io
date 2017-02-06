@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="这篇博客接着讲entry的验证函数，不过主要是使用的Tkinter的隐藏功能，也就是关于验证函数的一些额外的选项。">
+<meta name="description" content="这篇博客主要是总结一下Java中类的封装、构造方法、关联、this关键字等知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python零基础入门二十九之Tkinter隐藏技能">
-<meta property="og:url" content="http://Guoxiangyao.github.io/2017/01/25/python24/index.html">
+<meta property="og:title" content="Java复习之类的封装、构造方法、关联、this关键字">
+<meta property="og:url" content="http://Guoxiangyao.github.io/2017/02/06/javathis/index.html">
 <meta property="og:site_name" content="Running">
-<meta property="og:description" content="这篇博客接着讲entry的验证函数，不过主要是使用的Tkinter的隐藏功能，也就是关于验证函数的一些额外的选项。">
-<meta property="og:image" content="http://img.blog.csdn.net/20170125224750252?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170125231239515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-02-03T13:20:29.656Z">
+<meta property="og:description" content="这篇博客主要是总结一下Java中类的封装、构造方法、关联、this关键字等知识。">
+<meta property="og:updated_time" content="2017-02-06T13:17:25.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python零基础入门二十九之Tkinter隐藏技能">
-<meta name="twitter:description" content="这篇博客接着讲entry的验证函数，不过主要是使用的Tkinter的隐藏功能，也就是关于验证函数的一些额外的选项。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170125224750252?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Java复习之类的封装、构造方法、关联、this关键字">
+<meta name="twitter:description" content="这篇博客主要是总结一下Java中类的封装、构造方法、关联、this关键字等知识。">
 
 
 
@@ -124,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/01/25/python24/"/>
+  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/02/06/javathis/"/>
 
 
 
 
 
-  <title> Python零基础入门二十九之Tkinter隐藏技能 | Running </title>
+  <title> Java复习之类的封装、构造方法、关联、this关键字 | Running </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/01/25/python24/">
+  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/02/06/javathis/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Guoxiangyao">
@@ -297,7 +294,7 @@
             
             
               
-                Python零基础入门二十九之Tkinter隐藏技能
+                Java复习之类的封装、构造方法、关联、this关键字
               
             
           </h1>
@@ -312,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-25T23:13:31+08:00">
-                2017-01-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-06T21:16:08+08:00">
+                2017-02-06
               </time>
             
 
@@ -335,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -353,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/25/python24/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/25/python24/" itemprop="commentCount"></span>
+                <a href="/2017/02/06/javathis/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/06/javathis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,7 +361,7 @@
 
           
           
-             <span id="/2017/01/25/python24/" class="leancloud_visitors" data-flag-title="Python零基础入门二十九之Tkinter隐藏技能">
+             <span id="/2017/02/06/javathis/" class="leancloud_visitors" data-flag-title="Java复习之类的封装、构造方法、关联、this关键字">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,17 +388,12 @@
       
 
       
-        <p>这篇博客接着讲entry的验证函数，不过主要是使用的Tkinter的隐藏功能，也就是关于验证函数的一些额外的选项。<br><a id="more"></a><br>如下图所示：</p>
-<p><img src="http://img.blog.csdn.net/20170125224750252?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>为了使用这些选项，我们可以这样修改我们的validatecommand选项：</p>
-<p>validatecommand=(f,s1,s2,……)</p>
-<p>其中，f是验证函数名，s1,s2等是额外的选项，这些选项会作为参数一次传给f函数，再次之前需要将register()方法将验证函数包装起来。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> *</div><div class="line"></div><div class="line">master = Tk()</div><div class="line"></div><div class="line">v = StringVar()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(content,reason,name)</span>:</span></div><div class="line">     <span class="keyword">if</span> content == <span class="string">'小甲鱼'</span>:</div><div class="line">          print(<span class="string">'正确！'</span>)</div><div class="line">          print(content,reason,name)</div><div class="line">          <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">     <span class="keyword">else</span> :</div><div class="line">          print(<span class="string">'错误'</span>)</div><div class="line">          print(content,reason,name)</div><div class="line">          <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">testCMD = master.register(test)</div><div class="line"></div><div class="line">e1 = Entry(master,textvariable=v,validate=<span class="string">'focusout'</span>,\</div><div class="line">           validatecommand=(testCMD,<span class="string">'%P'</span>,<span class="string">'%v'</span>,<span class="string">'%W'</span>))</div><div class="line">e2 = Entry(master)</div><div class="line">e1.pack(padx=<span class="number">10</span>,pady=<span class="number">10</span>)</div><div class="line">e2.pack(padx=<span class="number">10</span>,pady=<span class="number">10</span>)</div><div class="line"></div><div class="line">mainloop()</div></pre></td></tr></table></figure>
-<p>下面我们结合Tkinter的隐藏选项实现一个简单的计算器。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> *</div><div class="line"></div><div class="line">master = Tk()</div><div class="line"></div><div class="line">frame = Frame(master)</div><div class="line">frame.pack(padx=<span class="number">10</span>,pady=<span class="number">10</span>)</div><div class="line"></div><div class="line">v1 = StringVar()</div><div class="line">v2 = StringVar()</div><div class="line">v3 = StringVar()</div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">注意在这里我们不能使用entry控件的get()方法来获取输入的内容</div><div class="line">因为当validate选项指定为key的时候，有任何的输入操作都会被拦截</div><div class="line">到这个函数当中，也就是说先拦截，只有这个函数返回True，那么输入的内容</div><div class="line">才会到变量里面去，也就是说我们使用get函数并无法get到数据，get函数在这个</div><div class="line">函数之后才会有效，get函数得到的是变量的值。</div><div class="line">所以只有使用%P来获得最新的输入框的内容</div><div class="line">'''</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(content)</span>:</span></div><div class="line">     <span class="keyword">if</span> content.isdigit():</div><div class="line">          <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">     <span class="keyword">else</span>:</div><div class="line">          <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"><span class="comment">#使用了特殊技能的函数需要使用register将其封装起来才可以</span></div><div class="line">testCMD = master.register(test)</div><div class="line">e1 = Entry(frame,width=<span class="number">10</span>,textvariable=v1,validate=<span class="string">'key'</span>,\</div><div class="line">           validatecommand=(testCMD,<span class="string">'%P'</span>)).grid(row=<span class="number">0</span>,column=<span class="number">0</span>)</div><div class="line">Label(frame,text=<span class="string">'+'</span>).grid(row=<span class="number">0</span>,column=<span class="number">1</span>)</div><div class="line"></div><div class="line">e2 = Entry(frame,width=<span class="number">10</span>,textvariable=v2,validate=<span class="string">'key'</span>,\</div><div class="line">           validatecommand=(testCMD,<span class="string">'%P'</span>)).grid(row=<span class="number">0</span>,column=<span class="number">2</span>)</div><div class="line">Label(frame,text=<span class="string">'='</span>).grid(row=<span class="number">0</span>,column=<span class="number">3</span>)</div><div class="line"></div><div class="line">e3 = Entry(frame,width=<span class="number">10</span>,textvariable=v3,state=<span class="string">'readonly'</span>).grid(row=<span class="number">0</span>,column=<span class="number">4</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">()</span>:</span></div><div class="line">     result=int(v1.get())+int(v2.get())</div><div class="line">     v3.set(str(result))</div><div class="line">Button(frame,text=<span class="string">'计算结果'</span>,command=calc).grid(row=<span class="number">1</span>,column=<span class="number">2</span>,padx=<span class="number">5</span>)</div><div class="line"></div><div class="line">mainloop()</div></pre></td></tr></table></figure>
-<p>程序运行如下图所示：</p>
-<p><img src="http://img.blog.csdn.net/20170125231239515?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-
+        <p>这篇博客主要是总结一下Java中<strong>类的封装</strong>、<strong>构造方法</strong>、<strong>关联</strong>、<strong>this关键字</strong>等知识。<br><a id="more"></a><br>1.封装性的概念<br>(1)封装性是面向对象思想的三大特征之一<br>(2)封装就是隐藏实现细节，仅对外提供访问接口</p>
+<p>2.封装的好处<br>(1)模块化<br>(2)信息隐藏<br>(3)代码重用<br>(4)插件化易于调试<br>(5)具有安全性</p>
+<p>3.构造方法<br>(1)什么是构造方法<br>构造方法就是类构造对象时调用的方法，用于对象的初始化工作<br>构造方法就是实例化一个类的对象时，也就是new的时候，最先调用的方法.<br>(2)构造方法的定义<br>构造方法是在类中定义的，构造方法的定义格式：<br><strong>方法名称与类名称相同，无返回值类型的声明</strong><br>对象的实例化语法：<br><strong>Duck duck = new Duck();</strong><br>new Duck后面有个括号，带括号表示调用了方法，此时调用的方法就是构造方法。<br><strong>注意：在类中没有显示的定义构造方法，系统会调用默认的构造方法</strong><br>(3)构造方法的重载<br>重载(overload)的定义：函数或者方法有<strong>相同的名称</strong>，但是<strong>参数列表不相同</strong>的情形，这样的<strong>同名不同参数的函数或者方法</strong>之间，互相称之为重载函数或者方法。<br>4.对象的一对一关系<br>对象的一对一关系建立在类的关联的基础上，所谓的类的关联，就是在一个类中声明另一个类的对象，也就是将一个类的对象当作另一个类的属性，便于相互使用某些方法或者属性。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">OnetoOneDemo</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span></div><div class="line">    &#123;</div><div class="line">        Husband h = <span class="keyword">new</span> Husband(<span class="string">"小白"</span>,<span class="string">'男'</span>);</div><div class="line">        Wife w= <span class="keyword">new</span> Wife(<span class="string">"星星"</span>,<span class="number">19</span>);</div><div class="line">        <span class="comment">//关联关系</span></div><div class="line">        h.wife=w;</div><div class="line">        w.husband=h;</div><div class="line">        System.<span class="keyword">out</span>.print(<span class="string">"我是"</span>+h.name+<span class="string">",我的妻子是"</span>+h.wife.name+<span class="string">"她今年"</span>+h.wife.age+<span class="string">"岁了"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> <span class="title">Husband</span>&#123;</div><div class="line">     String name;</div><div class="line">     <span class="keyword">char</span> sex;</div><div class="line">    <span class="comment">//关联妻子类</span></div><div class="line">     Wife wife;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Husband</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Husband</span>(<span class="params">String name,<span class="keyword">char</span> sex</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>.name=name;</div><div class="line">        <span class="keyword">this</span>.sex=sex;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> <span class="title">Wife</span>&#123;</div><div class="line">     String name;</div><div class="line">     <span class="keyword">int</span> age;</div><div class="line">    <span class="comment">//关联丈夫类</span></div><div class="line">     Husband husband;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Wife</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Wife</span>(<span class="params">String name,<span class="keyword">int</span> age</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>.name=name;</div><div class="line">        <span class="keyword">this</span>.age=age;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5.this关键字</p>
+<p>使用this关键字可以完成的操作：<br>(1)调用类中的属性<br>(2)调用类中的方法或者构造方法。<br><strong>注意：使用构造方法应该放在方法中的第一句</strong><br>(3)表示当前对象</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ThisKeyWordDemo</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span></div><div class="line">    &#123;</div><div class="line">        Bear b1 = <span class="keyword">new</span> Bear();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> <span class="title">Bear</span>&#123;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span>  <span class="keyword">char</span> sex;</div><div class="line">    <span class="comment">//3.this()表示调用构造方法</span></div><div class="line">    <span class="comment">//根据构造方法传入相应参数或者指定默认参数</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Bear</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>(<span class="string">"熊大"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Bear</span>(<span class="params">String name</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>(name,<span class="string">'公'</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Bear</span>(<span class="params">String name,<span class="keyword">char</span> sex</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//这样的赋值是错误的，赋值时候采用就近原则，这样只是</span></div><div class="line">        <span class="comment">//使得形参的name赋值给形参name</span></div><div class="line">        <span class="comment">//name=name;</span></div><div class="line">        <span class="comment">//因此必须指定谁的name</span></div><div class="line">        <span class="comment">//1.this表示的当前对象的name，sex</span></div><div class="line">        <span class="comment">//但是当类中的属性名称与形参不重复的时候，就可以直接赋值</span></div><div class="line">        <span class="keyword">this</span>.name=name;</div><div class="line">        <span class="keyword">this</span>.sex=sex;</div><div class="line">        <span class="comment">//2.调用本类的方法</span></div><div class="line">        <span class="keyword">this</span>.bite();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bite</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        System.<span class="keyword">out</span>.print(<span class="string">"我是"</span>+sex+<span class="string">"熊--"</span>+name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -440,7 +432,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -449,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/25/python23/" rel="next" title="Python零基础入门二十八之界面设计练习、Entry验证函数">
-                <i class="fa fa-chevron-left"></i> Python零基础入门二十八之界面设计练习、Entry验证函数
+              <a href="/2017/02/06/javaduixiangyulei/" rel="next" title="Java复习之类与对象">
+                <i class="fa fa-chevron-left"></i> Java复习之类与对象
               </a>
             
           </div>
@@ -458,10 +450,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/26/python25/" rel="prev" title="Python零基础入门之三十Text控件">
-                Python零基础入门之三十Text控件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,10 +464,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/25/python24/"
-     data-title="Python零基础入门二十九之Tkinter隐藏技能"
+        <div class="ds-share flat" data-thread-key="2017/02/06/javathis/"
+     data-title="Java复习之类的封装、构造方法、关联、this关键字"
      data-content=""
-     data-url="http://Guoxiangyao.github.io/2017/01/25/python24/">
+     data-url="http://Guoxiangyao.github.io/2017/02/06/javathis/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -506,8 +494,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/25/python24/"
-           data-title="Python零基础入门二十九之Tkinter隐藏技能" data-url="http://Guoxiangyao.github.io/2017/01/25/python24/">
+      <div class="ds-thread" data-thread-key="2017/02/06/javathis/"
+           data-title="Java复习之类的封装、构造方法、关联、this关键字" data-url="http://Guoxiangyao.github.io/2017/02/06/javathis/">
       </div>
     
   </div>
