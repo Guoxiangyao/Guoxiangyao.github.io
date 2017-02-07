@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Mysql," />
 
 
 
@@ -84,35 +84,25 @@
 
 
 
-<meta name="description" content="接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。">
+<meta name="description" content="这篇博客主要是简单的介绍一下mysql的常用的五个聚合函数AVG,COUNT,MIN/MAX,SUM。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python零基础入门之列表的分片">
-<meta property="og:url" content="http://Guoxiangyao.github.io/2017/01/10/python4/index.html">
+<meta property="og:title" content="Mysql之聚合函数">
+<meta property="og:url" content="http://Guoxiangyao.github.io/2017/02/07/juhehanshu/index.html">
 <meta property="og:site_name" content="Running">
-<meta property="og:description" content="接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110200824693?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110201018975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110201751171?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110201841292?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110202448369?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110202501841?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110204031155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110204102359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110205100915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110205144431?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110205552146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110205612042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110210643051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110210831189?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110211322106?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110211342966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110212324837?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170110212337696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-01-10T13:31:39.228Z">
+<meta property="og:description" content="这篇博客主要是简单的介绍一下mysql的常用的五个聚合函数AVG,COUNT,MIN/MAX,SUM。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207174835669?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207174851247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207175131628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207175148097?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207175206269?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207175230971?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207175254815?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170207175308316?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-02-07T09:55:15.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python零基础入门之列表的分片">
-<meta name="twitter:description" content="接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170110200824693?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Mysql之聚合函数">
+<meta name="twitter:description" content="这篇博客主要是简单的介绍一下mysql的常用的五个聚合函数AVG,COUNT,MIN/MAX,SUM。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170207174835669?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -140,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/01/10/python4/"/>
+  <link rel="canonical" href="http://Guoxiangyao.github.io/2017/02/07/juhehanshu/"/>
 
 
 
 
 
-  <title> Python零基础入门之列表的分片 | Running </title>
+  <title> Mysql之聚合函数 | Running </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +279,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/01/10/python4/">
+  <link itemprop="mainEntityOfPage" href="http://Guoxiangyao.github.io/2017/02/07/juhehanshu/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Guoxiangyao">
@@ -313,7 +303,7 @@
             
             
               
-                Python零基础入门之列表的分片
+                Mysql之聚合函数
               
             
           </h1>
@@ -328,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-10T21:26:52+08:00">
-                2017-01-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T17:54:20+08:00">
+                2017-02-07
               </time>
             
 
@@ -351,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">Mysql</span>
                   </a>
                 </span>
 
@@ -369,8 +359,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/10/python4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/10/python4/" itemprop="commentCount"></span>
+                <a href="/2017/02/07/juhehanshu/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/07/juhehanshu/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,7 +370,7 @@
 
           
           
-             <span id="/2017/01/10/python4/" class="leancloud_visitors" data-flag-title="Python零基础入门之列表的分片">
+             <span id="/2017/02/07/juhehanshu/" class="leancloud_visitors" data-flag-title="Mysql之聚合函数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -407,35 +397,27 @@
       
 
       
-        <p>接着上一篇继续学习列表的相关操作，主要时学习列表分片和几个对于列表元素进行操作的函数，算是对于上一篇的一个补充。<br><a id="more"></a><br>1.列表的分片<br> <strong>格式：str1=str[起始位置：结束位置]</strong><br> 作用：将str中指定区间的元素复制到str1中，也就是说分片得到的是原字符串的一个副本，而不是一个指向str的一个标签而已，而通过“=”赋值得到只是str的一个标签，即对str操作就是对str1进行操作，类似于Java中的值传递和引用。</p>
-<p><img src="http://img.blog.csdn.net/20170110200824693?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110201018975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>2.列表的重复操作符（*）</p>
-<p><img src="http://img.blog.csdn.net/20170110201751171?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110201841292?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>3.成员关系操作符（in  not in）<br>作用：判断一个元素是否存在于一个列表之中</p>
-<p><img src="http://img.blog.csdn.net/20170110202448369?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110202501841?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>但是如果判断一个元素是否存在于列表中的列表时，这样单纯的判断时不行的。<br>第一种情况中明明在列表中存在，结果却是False,说明了对于列表中列表的元素不能直接判断。而需要用下图的方法，手动指定一下位置。</p>
-<p><img src="http://img.blog.csdn.net/20170110204031155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110204102359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>4.列表的内置函数<br>(1)count()：计算列表中元素出现的次数<br> <img src="http://img.blog.csdn.net/20170110205100915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
-<p><img src="http://img.blog.csdn.net/20170110205144431?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p> (2)index():返回指定元素在列表中首次出现的位置</p>
-<p> <img src="http://img.blog.csdn.net/20170110205552146?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110205612042?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>该函数也可以添加参数，即在指定的区间内部进行查找。</p>
-<p>(3)reverse()函数：实现列表元素的反转</p>
-<p> <img src="http://img.blog.csdn.net/20170110210643051?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110210831189?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>(4)sort():实现列表的排序,默认是从小到大排序</p>
-<p><img src="http://img.blog.csdn.net/20170110211322106?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110211342966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>当然也可以实现从大到小进行排序（注意reverse=<strong>True</strong>大写）</p>
-<p><img src="http://img.blog.csdn.net/20170110212324837?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20170110212337696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>关于列表的相关知识到这里就基本结束了，明天将整理与列表类似的一个数据结构——元组。最后，将今天的代码附上：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"------列表的分片------"</span>)</span></span></div><div class="line">str1=<span class="string">"abcdefg"</span></div><div class="line">str2=str1[<span class="number">0</span>:<span class="number">2</span>]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(str2)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"------重复操作符------"</span>)</span></span></div><div class="line">list=[<span class="string">"小甲鱼"</span>,<span class="string">"小布丁"</span>,<span class="string">"大布丁"</span>]</div><div class="line">list=list*<span class="number">3</span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"------成员关系操作符------"</span>)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"小甲鱼"</span> in list)</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"\n"</span>)</span></span></div><div class="line"></div><div class="line"></div><div class="line">list1=[<span class="string">'123'</span>,<span class="string">"华为"</span>,[<span class="string">"三星"</span>,<span class="string">"小米"</span>]]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"三星"</span> in list1)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"\n"</span>)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"三星"</span> in list1[<span class="number">2</span>])</span></span></div><div class="line"></div><div class="line">list2=[<span class="string">'1'</span>,<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>]</div><div class="line">num=list2.count(<span class="string">'1'</span>)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"列表中元素1出现的次数为:%d"</span>%num)</span></span></div><div class="line">list3=list2[:]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list3.index(<span class="string">'1'</span>)</span></span>)</div><div class="line"></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list3)</span></span></div><div class="line">list3.reverse()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list3)</span></span></div><div class="line"></div><div class="line">list4=[<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">5</span>]</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list4)</span></span></div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"\n"</span>)</span></span></div><div class="line">list4.sort()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list4)</span></span></div><div class="line"></div><div class="line">list4.sort(reverse=True)</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(list4)</span></span></div></pre></td></tr></table></figure>
+        <p>这篇博客主要是简单的介绍一下mysql的常用的五个聚合函数<strong>AVG,COUNT,MIN/MAX,SUM</strong>。<br><a id="more"></a><br>在此之前先介绍一款可视化操作数据库的软件—<strong>navicat</strong>。<br>在此附上破解版<a href="http://pan.baidu.com/s/1pLJcCtX" target="_blank" rel="external">navicat破解版安装包</a><br>安装时候主要的问题如下图：</p>
+<p><img src="http://img.blog.csdn.net/20170207174835669?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170207174851247?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>经过以上的配置，我们就可以使用这款软件来进行数据库的相关操作了。</p>
+<p>1.avg<br>avg([distinct] expr)<br>返回expr的平均值。distinct选项可用于返回expr的不同值的平均值</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> gender,<span class="built_in">avg</span>(age) <span class="keyword">from</span> student <span class="built_in">group</span> <span class="keyword">by</span> gender</div></pre></td></tr></table></figure>
+<p>2.count(expr)<br>返回select语句检索到的行中非NULL值的数目<br>(1)返回检索行的数目，不论其是否包含NULL值</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="built_in">count</span>(*) <span class="keyword">from</span> student</div></pre></td></tr></table></figure>
+<p>(2)返回select语句检索到的行中非NULL值的数目<br><strong>select count(name) from student</strong><br>注意:一般使用主键进行查询</p>
+<p>3.min(expr)/max(expr)<br>返回expr的最大值与最小值</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="built_in">min</span>(age),<span class="built_in">max</span>(age) <span class="keyword">from</span> student</div></pre></td></tr></table></figure>
+<p>4.sum(expr)<br>返回expr的总和</p>
+<p>select sum(age) from student</p>
+<p>最后附上几张自己练习时候的截图，方便理解：</p>
+<p><img src="http://img.blog.csdn.net/20170207175131628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170207175148097?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170207175206269?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170207175230971?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170207175254815?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170207175308316?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQmVNb3JlUXVpZXQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+
       
     </div>
 
@@ -474,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
           
         </div>
       
@@ -483,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/10/python3/" rel="next" title="Python零基础入门之For循环+列表">
-                <i class="fa fa-chevron-left"></i> Python零基础入门之For循环+列表
+              <a href="/2017/02/06/javathis/" rel="next" title="Java复习之类的封装、构造方法、关联、this关键字">
+                <i class="fa fa-chevron-left"></i> Java复习之类的封装、构造方法、关联、this关键字
               </a>
             
           </div>
@@ -493,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/11/python4-1/" rel="prev" title="Python零基础入门之五字符串的格式化以及序列的内置函数">
-                Python零基础入门之五字符串的格式化以及序列的内置函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/07/liuchengkongzhi/" rel="prev" title="Mysql之流程控制语句">
+                Mysql之流程控制语句 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -510,10 +492,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/10/python4/"
-     data-title="Python零基础入门之列表的分片"
+        <div class="ds-share flat" data-thread-key="2017/02/07/juhehanshu/"
+     data-title="Mysql之聚合函数"
      data-content=""
-     data-url="http://Guoxiangyao.github.io/2017/01/10/python4/">
+     data-url="http://Guoxiangyao.github.io/2017/02/07/juhehanshu/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -540,8 +522,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/10/python4/"
-           data-title="Python零基础入门之列表的分片" data-url="http://Guoxiangyao.github.io/2017/01/10/python4/">
+      <div class="ds-thread" data-thread-key="2017/02/07/juhehanshu/"
+           data-title="Mysql之聚合函数" data-url="http://Guoxiangyao.github.io/2017/02/07/juhehanshu/">
       </div>
     
   </div>
